@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Search Results</h1>
+  </div>
+</div>
+
+<%= will_paginate @results %>
+
+<div class="row">
+  <div class="panel panel-default">
+    <div class="panel-heading">Panel heading</div>
+    <div class="panel-body">
+      <p>Segue os resultados para a busca por <b><%= @search_param %></b></p>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>First Aired</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @results.each do |series| %>
+        <tr>
+          <th scope="row"><%= series.id %></th>
+          <td><%= series.name %></td>
+          <td><%= series.first_aired %></td>
+          <td><%= series.status %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

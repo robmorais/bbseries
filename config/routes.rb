@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'series#index'
 
   get 'series/index'
+  post 'series/search'
+  get 'series/search'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
